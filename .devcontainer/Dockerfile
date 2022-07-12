@@ -5,8 +5,12 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 RUN apt-get update && \
     export DEBIAN_FRONTEND=noninteractive && \
     apt-get -y install --no-install-recommends \
+  ghostscript \
   imagemagick \
   zip
+
+# Make sure that ImageMagick can convert PDF to images
+RUN sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
 
 # Copy files needed to build our flavour of mkdocs
 COPY mkdocs-edu/* /mkdocs-edu/
