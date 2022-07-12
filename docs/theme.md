@@ -86,4 +86,4 @@ Avec cette configuration, la couleur de base du site est celle de la filière IS
 
 Le site devrait maintenant ressembler à ça:
 
-![Image description](../static/img/site_red.png){ width="100%" }
+![site avec le thème de ISC](img/site_red.png){ width="100%" }
