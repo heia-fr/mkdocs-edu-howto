@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://example.com/</loc>
+         <loc>https://heia-fr.github.io/mkdocs-edu-howto/</loc>
          <lastmod>2022-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/devcontainer/</loc>
+         <loc>https://heia-fr.github.io/mkdocs-edu-howto/devcontainer/</loc>
          <lastmod>2022-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/first-site/</loc>
+         <loc>https://heia-fr.github.io/mkdocs-edu-howto/first-site/</loc>
          <lastmod>2022-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/incremental/</loc>
+         <loc>https://heia-fr.github.io/mkdocs-edu-howto/incremental/</loc>
          <lastmod>2022-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/install/</loc>
+         <loc>https://heia-fr.github.io/mkdocs-edu-howto/install/</loc>
          <lastmod>2022-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/printing/</loc>
+         <loc>https://heia-fr.github.io/mkdocs-edu-howto/printing/</loc>
          <lastmod>2022-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/publishing/</loc>
+         <loc>https://heia-fr.github.io/mkdocs-edu-howto/publishing/</loc>
          <lastmod>2022-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/reopen/</loc>
+         <loc>https://heia-fr.github.io/mkdocs-edu-howto/reopen/</loc>
          <lastmod>2022-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/theme/</loc>
+         <loc>https://heia-fr.github.io/mkdocs-edu-howto/theme/</loc>
          <lastmod>2022-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/update/</loc>
+         <loc>https://heia-fr.github.io/mkdocs-edu-howto/update/</loc>
          <lastmod>2022-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
