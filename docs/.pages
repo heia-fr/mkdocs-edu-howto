@@ -1,0 +1,11 @@
+nav:
+    - index.md
+    - install.md
+    - devcontainer.md
+    - reopen.md
+    - first-site.md
+    - theme.md
+    - publishing.md
+    - incremental.md
+    - printing.md
+    - update.md
