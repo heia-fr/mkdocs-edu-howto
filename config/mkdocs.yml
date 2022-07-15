@@ -8,3 +8,5 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/heia-fr/mkdocs-edu-howto
+    - icon: fontawesome/brands/dev
+      link: https://dev.to/supcik
