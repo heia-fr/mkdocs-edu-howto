@@ -25,11 +25,11 @@ theme:
 
 Tapez `serve` dans le terminal et vous devriez observer le résultat suivant:
 
-![terminal avec la commande serve](img/serve.png){ width="100%" }
+![terminal avec la commande serve](first-site/img/serve.png){ width="100%" }
 
 
 Cliquez sur le bouton _Open in Browser_ et votre navigateur devrait  afficher votre site:
 
-![Premier site mkdocs](img/demosite.png){ width="100%" }
+![Premier site mkdocs](first-site/img/demosite.png){ width="100%" }
 
 Félicitations! Vous venez de créer un site web avec mkdocs.

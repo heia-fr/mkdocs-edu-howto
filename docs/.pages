@@ -6,6 +6,8 @@ nav:
     - first-site.md
     - theme.md
     - publishing.md
+    - including.md
     - incremental.md
     - printing.md
+    - i18n.md
     - update.md

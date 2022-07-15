@@ -46,6 +46,9 @@ overrides
 
 Dans le dossier `overrides/assets/images`, copiez les images suivantes:
 
+- [favicon.ico](https://github.com/heia-fr/mkdocs-edu-howto/blob/main/overrides/assets/images/favicon.ico)
+- [heiafr.png](https://github.com/heia-fr/mkdocs-edu-howto/blob/main/overrides/assets/images/heiafr.png)
+
 Puis ajoutez le fichier `overrides/javascripts/mathjax.js` :
 
 ```javascript
@@ -86,4 +89,4 @@ Avec cette configuration, la couleur de base du site est celle de la filière IS
 
 Le site devrait maintenant ressembler à ça:
 
-![site avec le thème de ISC](img/site_red.png){ width="100%" }
+![site avec le thème de ISC](theme/img/site_red.png){ width="100%" }
