@@ -1,0 +1,29 @@
+name: publish-websites
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-push-pages:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build mkdocs site
+        uses: ./.github/actions/mkdocs-edu
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ "{{" }} secrets.GITHUB_TOKEN {{ "}}" }}
+          publish_dir: ./public

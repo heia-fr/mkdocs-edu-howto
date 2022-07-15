@@ -260,6 +260,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../including/" class="md-nav__link">
+        Utilisation des "includes"
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../incremental/" class="md-nav__link">
         Publication incrémentielle
       </a>
@@ -277,6 +292,21 @@
     <li class="md-nav__item">
       <a href="../printing/" class="md-nav__link">
         Impression du site (PDF)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../i18n/" class="md-nav__link">
+        Site multi-langues
       </a>
     </li>
   
@@ -341,6 +371,110 @@
 les options ci-dessus sont possible avec MkDocs.</p>
 <p>Pour utiliser <em>GitHub Pages</em>, vous devez héberger votre projet dans un dépôt git
 de GitHub.</p>
+<p>Créez ensuite un dossier <code>.github</code> à la racine de votre projet</p>
+<p>Ajoutez-y les fichiers suivants pour définir l&rsquo;action <em>Mkdocs edu builder</em>:</p>
+<div class="highlight"><span class="filename">actions/mkdocs-edu/action.yml</span><pre><span></span><code><span class="c1"># action.yml</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Mkdocs</span><span class="nv"> </span><span class="s">edu</span><span class="nv"> </span><span class="s">builder&#39;</span><span class="w"></span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Builds</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">Mkdocs</span><span class="nv"> </span><span class="s">website</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">HEIA-FR&#39;</span><span class="w"></span>
+<span class="nt">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">site-dir</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;public</span><span class="nv"> </span><span class="s">build</span><span class="nv"> </span><span class="s">directory&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;../public&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config-file</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;config</span><span class="nv"> </span><span class="s">file&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;config/mkdocs.yml&#39;</span><span class="w"></span>
+
+<span class="nt">runs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">using</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;docker&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Dockerfile&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">args</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$ {{ inputs.site-dir }}</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$ {{ inputs.config-file }}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">actions/mkdocs-edu/Dockerfile</span><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:bullseye</span>
+
+<span class="c"># Install additional software</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get update <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    <span class="nb">export</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    apt-get -y install --no-install-recommends <span class="se">\</span>
+  ghostscript <span class="se">\</span>
+  imagemagick <span class="se">\</span>
+  zip
+
+<span class="c"># Make sure that ImageMagick can convert PDF to images</span>
+<span class="k">RUN</span><span class="w"> </span>sed -i <span class="s1">&#39;/disable ghostscript format types/,+6d&#39;</span> <span class="se">\</span>
+    /etc/ImageMagick-6/policy.xml
+
+<span class="c"># Install Poetry</span>
+<span class="k">RUN</span><span class="w"> </span>pip install poetry
+
+<span class="c"># Install entrypoint</span>
+<span class="k">COPY</span><span class="w"> </span>entrypoint.sh /entrypoint.sh
+<span class="k">RUN</span><span class="w"> </span>chmod +x /entrypoint.sh
+<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/entrypoint.sh&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">actions/mkdocs-edu/entrypoint.sh</span><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+
+<span class="nb">set</span> -o errexit
+<span class="nb">set</span> -o pipefail
+<span class="nb">set</span> -o nounset
+<span class="c1"># set -o xtrace</span>
+
+<span class="nv">site_dir</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="nv">public</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">config</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">2</span><span class="k">:-</span><span class="nv">config</span><span class="p">/mkdocs.yml</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Install mkdocs from .devcontainer in a sub-shell</span>
+cp -a .devcontainer/mkdocs-edu /
+<span class="o">(</span><span class="nb">cd</span> /mkdocs-edu <span class="o">&amp;&amp;</span> poetry config virtualenvs.create <span class="nb">false</span> <span class="o">&amp;&amp;</span> poetry install<span class="o">)</span>
+
+python --version
+mkdocs --version
+
+mkdocs build --clean --config-file <span class="si">${</span><span class="nv">config</span><span class="si">}</span> --site-dir <span class="si">${</span><span class="nv">site_dir</span><span class="si">}</span>
+</code></pre></div>
+<p>Ainsi que le fichier suivant pour le <em>workflow</em> :</p>
+<div class="highlight"><span class="filename">workflows/website.yml</span><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">publish-websites</span><span class="w"></span>
+
+<span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;main&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;v*&#39;</span><span class="w"></span>
+
+<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">build-and-push-pages</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
+<span class="w">    </span><span class="nt">permissions</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span><span class="w"></span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout repository</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span><span class="w"></span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build mkdocs site</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/actions/mkdocs-edu</span><span class="w"></span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v3</span><span class="w"></span>
+<span class="w">        </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.ref == &#39;refs/heads/main&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span><span class="w"></span>
+<span class="w">          </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./public</span><span class="w"></span>
+</code></pre></div>
+<p>Lors du prochain <em>push</em> avec ces nouveaux fichiers, l&rsquo;action de github
+créra une nouvelle branche avec le contenu de votre site statique.</p>
+<p>Afin de publier cette branche dans <em>GitHub Pages</em>, allez dans <em>Settings</em> &rarr; <em>Pages</em>
+et choisissez la branche <em>gh-pages</em> comme source de votre site :</p>
+<p><img alt="settings" src="img/gh-pages-settings.png" width="100%" /></p>
+<p>Après avoir sauvé cette configuration, votre site devrait être publié
+à l&rsquo;adresse que vous pouvez voir sur la page des <em>settings</em>.</p>
+<p>Grâce aux <em>GitHub Actions</em>, votre site sera automatiquement publié
+lors de chaque <em>push</em> de la branche <em>main</em> du projet ou lors du
+<em>push</em> d&rsquo;un <em>tag</em> commençant par &ldquo;v&rdquo;.</p>
 
               
             </article>
@@ -372,13 +506,13 @@ de GitHub.</p>
       
       
         
-        <a href="../incremental/" class="md-footer__link md-footer__link--next" aria-label="Next: Publication incrémentielle" rel="next">
+        <a href="../including/" class="md-footer__link md-footer__link--next" aria-label="Next: Utilisation des &#34;includes&#34;" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Publication incrémentielle
+              Utilisation des "includes"
             </div>
           </div>
           <div class="md-footer__button md-icon">

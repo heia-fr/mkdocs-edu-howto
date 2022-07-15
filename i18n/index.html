@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://heia-fr.github.io/mkdocs-edu-howto/theme/">
+        <link rel="canonical" href="https://heia-fr.github.io/mkdocs-edu-howto/i18n/">
       
       <link rel="icon" href="../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
-        <title>Thème du site - Création de sites web pour l'enseignement</title>
+        <title>Site multi-langues - Création de sites web pour l'enseignement</title>
       
     
     
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Thème du site
+              Site multi-langues
             
           </span>
         </div>
@@ -220,19 +220,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../theme/" class="md-nav__link">
         Thème du site
       </a>
-      
     </li>
   
 
@@ -303,11 +295,19 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../i18n/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Site multi-langues
       </a>
+      
     </li>
   
 
@@ -357,81 +357,9 @@
                 
 
 
-  <h1>Thème du site</h1>
+  <h1>Site multi-langues</h1>
 
-<p>Le thème du site (couleur, police d&rsquo;écriture, &hellip;) peut être modifié à l&rsquo;aide du fichier <code>config/mkdocs.yml</code> et de fichiers <code>css</code> et <code>javascript</code> supplémentaires.</p>
-<p>Modifiez le fichier <code>config/mkdocs.yml</code> comme suit :</p>
-<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My Education Site</span><span class="w"></span>
-
-<span class="nt">docs_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;../docs/&#39;</span><span class="w"></span>
-<span class="nt">site_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;../public/&#39;</span><span class="w"></span>
-
-<span class="nt">theme</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span><span class="w"></span>
-<span class="w">  </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;fr&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">font</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Roboto&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">code</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;IBM</span><span class="nv"> </span><span class="s">Plex</span><span class="nv"> </span><span class="s">Mono&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">custom_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;../overrides/&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;assets/images/heiafr.png&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">favicon</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;assets/images/favicon.ico&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.code.annotate</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.sections</span><span class="w"></span>
-
-<span class="nt">extra_css</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;stylesheets/extra.css&#39;</span><span class="w"></span>
-
-<span class="nt">extra_javascript</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/mathjax.js</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://polyfill.io/v3/polyfill.min.js?features=es6</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js</span><span class="w"></span>
-</code></pre></div>
-<p>créez ensuite la structure de dossiers suivante:</p>
-<div class="highlight"><pre><span></span><code>overrides
-├── assets
-│   └── images
-├── javascripts
-└── stylesheets
-</code></pre></div>
-<p>Dans le dossier <code>overrides/assets/images</code>, copiez les images suivantes:</p>
-<ul>
-<li><a href="https://github.com/heia-fr/mkdocs-edu-howto/blob/main/overrides/assets/images/favicon.ico">favicon.ico</a></li>
-<li><a href="https://github.com/heia-fr/mkdocs-edu-howto/blob/main/overrides/assets/images/heiafr.png">heiafr.png</a></li>
-</ul>
-<p>Puis ajoutez le fichier <code>overrides/javascripts/mathjax.js</code> :</p>
-<div class="highlight"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nx">inlineMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;\\(&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;\\)&quot;</span><span class="p">]],</span><span class="w"></span>
-<span class="w">      </span><span class="nx">displayMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;\\[&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;\\]&quot;</span><span class="p">]],</span><span class="w"></span>
-<span class="w">      </span><span class="nx">processEscapes</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nx">processEnvironments</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nx">ignoreHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;.*|&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nx">processHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;arithmatex&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">};</span><span class="w"></span>
-
-<span class="w">  </span><span class="nb">document</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetPromise</span><span class="p">()</span><span class="w"></span>
-<span class="w">  </span><span class="p">})</span><span class="w"></span>
-</code></pre></div>
-<p>et <code>overrides/stylesheets/extra.css</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nv">--md-primary-fg-color</span><span class="p">:</span><span class="w">        </span><span class="mh">#C32823</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nv">--md-primary-fg-color--light</span><span class="p">:</span><span class="w"> </span><span class="mh">#fd5e4c</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nv">--md-primary-fg-color--dark</span><span class="p">:</span><span class="w">  </span><span class="mh">#8b0000</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nv">--md-accent-fg-color</span><span class="p">:</span><span class="w">         </span><span class="mh">#007CB7</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="p">.</span><span class="nc">md-content</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>Avec cette configuration, la couleur de base du site est celle de la filière ISC de la Haute école d&rsquo;ingénierie et d&rsquo;architecture de Fribourg (#C32823). Les variantes de teintes sont déterminées à l&rsquo;aide du site <a href="https://material.io/resources/color">https://material.io/resources/color</a>.</p>
-<p>Le site devrait maintenant ressembler à ça:</p>
-<p><img alt="site avec le thème de ISC" src="img/site_red.png" width="100%" /></p>
+<p><img alt="En construction" src="../assets/images/under-construction.png" width="50%" /></p>
 
               
             </article>
@@ -447,7 +375,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../first-site/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contenu du premier site" rel="prev">
+        <a href="../printing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Impression du site (PDF)" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -456,20 +384,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Contenu du premier site
+              Impression du site (PDF)
             </div>
           </div>
         </a>
       
       
         
-        <a href="../publishing/" class="md-footer__link md-footer__link--next" aria-label="Next: Publication du site sur Internet" rel="next">
+        <a href="../update/" class="md-footer__link md-footer__link--next" aria-label="Next: Mise à jour de mkdocs" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Publication du site sur Internet
+              Mise à jour de mkdocs
             </div>
           </div>
           <div class="md-footer__button md-icon">
