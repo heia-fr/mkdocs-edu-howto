@@ -21,7 +21,9 @@ Créez ensuite un dossier `.github` à la racine de votre projet
 Ajoutez-y les fichiers suivants pour définir l'action _Mkdocs edu builder_:
 
 ```yaml title="actions/mkdocs-edu/action.yml"
+{% raw %}
 {! include "publishing/inc/actions/mkdocs-edu/action.yml" ignore missing !}
+{% endraw %}
 ```
 
 ```Dockerfile title="actions/mkdocs-edu/Dockerfile"
@@ -35,7 +37,9 @@ Ajoutez-y les fichiers suivants pour définir l'action _Mkdocs edu builder_:
 Ainsi que le fichier suivant pour le _workflow_ :
 
 ```yaml title="workflows/website.yml"
+{% raw %}
 {! include "publishing/inc/workflows/website.yml" ignore missing !}
+{% endraw %}
 ```
 
 Lors du prochain _push_ avec ces nouveaux fichiers, l'action de github
