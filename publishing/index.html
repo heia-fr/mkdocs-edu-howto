@@ -390,8 +390,8 @@ de GitHub.</p>
 <span class="w">  </span><span class="nt">using</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;docker&#39;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Dockerfile&#39;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$ {{ inputs.site-dir }}</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$ {{ inputs.config-file }}</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ inputs.site-dir }}</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ inputs.config-file }}</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><span class="filename">actions/mkdocs-edu/Dockerfile</span><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:bullseye</span>
 

@@ -15,5 +15,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - $ {{ '{{' }} inputs.site-dir {{ '}}' }}
-    - $ {{ '{{' }} inputs.config-file {{ '}}' }}
+    - ${{ inputs.site-dir }}
+    - ${{ inputs.config-file }}
