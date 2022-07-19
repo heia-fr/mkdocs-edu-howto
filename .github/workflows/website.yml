@@ -8,6 +8,10 @@ on:
     tags:
       - 'v*'
 
+env:
+  SELECT_WEEK: 999
+  SHOW_SOLUTION: 999
+
 jobs:
   build-and-push-pages:
     runs-on: ubuntu-latest

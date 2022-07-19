@@ -65,3 +65,6 @@ plugins:
     closing_tag: '!}'
   awesome-pages: {}
   macros: {}
+  mkdocs-simple-hooks:
+    hooks:
+      on_pre_build: "hooks:on_pre_build"
