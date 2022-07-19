@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -162,8 +167,38 @@
   
   
     <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        Installation les logiciels nécessaires
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../devcontainer/" class="md-nav__link">
         Installation du devcontainer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reopen/" class="md-nav__link">
+        Ouverture du dossier dans le devcontainer
       </a>
     </li>
   
@@ -192,8 +227,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../i18n/" class="md-nav__link">
-        Site multi-langues
+      <a href="../theme/" class="md-nav__link">
+        Thème du site
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publishing/" class="md-nav__link">
+        Publication du site sur Internet
       </a>
     </li>
   
@@ -229,25 +279,60 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Publication incrémentielle
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Publication incrémentielle
       </a>
       
-    </li>
-  
+        
 
-    
-      
-      
-      
-
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <li class="md-nav__item">
-      <a href="../install/" class="md-nav__link">
-        Installation les logiciels nécessaires
-      </a>
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publication-incrementielle-du-contenu" class="md-nav__link">
+    Publication incrémentielle du contenu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publication-incrementielle-des-solutions" class="md-nav__link">
+    Publication incrémentielle des solutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modification-du-workflow-pour-la-publication" class="md-nav__link">
+    Modification du workflow pour la publication
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -275,38 +360,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../publishing/" class="md-nav__link">
-        Publication du site sur Internet
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reopen/" class="md-nav__link">
-        Ouverture du dossier dans le devcontainer
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../theme/" class="md-nav__link">
-        Thème du site
+      <a href="../i18n/" class="md-nav__link">
+        Site multi-langues
       </a>
     </li>
   
@@ -345,6 +400,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publication-incrementielle-du-contenu" class="md-nav__link">
+    Publication incrémentielle du contenu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publication-incrementielle-des-solutions" class="md-nav__link">
+    Publication incrémentielle des solutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modification-du-workflow-pour-la-publication" class="md-nav__link">
+    Modification du workflow pour la publication
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -359,7 +450,210 @@
 
   <h1>Publication incrémentielle</h1>
 
-<p><img alt="En construction" src="../assets/images/under-construction.png" width="50%" /></p>
+<p>Les sites pour l&rsquo;éducation nécessitent souvent de pouvoir publier
+les chapitres du cours au fur et à mesure des semaines. Il en va de
+même avec les solutions des exercices qui ne doivent être publiés
+que lorsque les étudiants ont rendu leurs copies.</p>
+<h2 id="installation">Installation</h2>
+<p>Pour permettre les opérations ci-dessus, nous avons besoin
+d&rsquo;installer quelques <em>plugins</em> supplémentaires.</p>
+<p>Allez dans le répertoire <code>.devcontainer/mkdocs-edu/</code> et tapez les commandes suivantes</p>
+<div class="highlight"><pre><span></span><code>poetry add mkdocs-awesome-pages-plugin
+poetry add mkdocs-macros-plugin
+poetry add mkdocs-simple-hooks
+</code></pre></div>
+<p>Ajoutez aussi les <em>plugins</em> dans le fichier <code>config/mkdocs.yml</code> :</p>
+<div class="highlight"><span class="filename">config/mkdocs.yml</span><pre><span></span><code>...
+plugins:
+  ...
+  awesome-pages: {}
+  macros: {}
+  mkdocs-simple-hooks:
+    hooks:
+      on_pre_build: &quot;hooks:on_pre_build&quot;
+</code></pre></div>
+<p>Ajoutez aussi le fichier <code>hooks.py</code> à la racine de votre projet:</p>
+<div class="highlight"><span class="filename">hooks.py</span><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">jinja2</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;mkdocs.hooks&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_pre_build</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Running on_pre_build hook&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;docs_dir&quot;</span><span class="p">],</span> <span class="n">topdown</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">env</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">Environment</span><span class="p">(</span>
+            <span class="n">loader</span><span class="o">=</span><span class="n">jinja2</span><span class="o">.</span><span class="n">FileSystemLoader</span><span class="p">(</span><span class="n">root</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;pages.j2&quot;</span><span class="p">:</span>
+                <span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">)</span>
+                <span class="n">dst</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&quot;.pages&quot;</span><span class="p">)</span>
+                <span class="c1"># Do not write the file if the content is the same.</span>
+                <span class="c1"># Otherwise, the &quot;watcher&quot; will continuously reload the page.</span>
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dst</span><span class="p">):</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                        <span class="n">orig</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">content</span> <span class="o">==</span> <span class="n">orig</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing </span><span class="si">{</span><span class="n">dst</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div>
+<p>Ce script permet de générer les fichiers <code>.pages</code> pour le plugin <code>awesome-pages</code>
+à partir des <em>templates</em> <code>pages.j2</code>. Nous reviendrons sur l&rsquo;utilisation de ces
+fichiers plus tard.</p>
+<p>Ajouter encore le fichier <code>main.py</code> dans le dossier <code>config/</code> :</p>
+<div class="highlight"><span class="filename">config/main.py</span><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">define_env</span><span class="p">(</span><span class="n">env</span><span class="p">):</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;solution&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SHOW_SOLUTION&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;week&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SELECT_WEEK&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<p>Vous devez maintenant modifier le script <code>serve</code> que nous avons vu
+dans un chapitre précédent. Modifier le fichier <code>.devcontainer/scripts/serve</code>
+avec le contenu suivant:</p>
+<div class="highlight"><span class="filename">.devcontainer/scripts/serve</span><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
+
+<span class="nb">set</span> <span class="o">-</span><span class="n">o</span> <span class="n">errexit</span>
+<span class="nb">set</span> <span class="o">-</span><span class="n">o</span> <span class="n">pipefail</span>
+<span class="nb">set</span> <span class="o">-</span><span class="n">o</span> <span class="n">nounset</span>
+
+<span class="n">export</span> <span class="n">SELECT_WEEK</span><span class="o">=</span><span class="s2">&quot;999&quot;</span>
+<span class="n">export</span> <span class="n">SHOW_SOLUTION</span><span class="o">=</span><span class="s2">&quot;999&quot;</span>
+
+<span class="k">while</span> <span class="n">getopts</span> <span class="s2">&quot;w:s:&quot;</span> <span class="n">opt</span><span class="p">;</span> <span class="n">do</span>
+    <span class="k">case</span> <span class="err">$</span><span class="p">{</span><span class="n">opt</span><span class="p">}</span> <span class="ow">in</span>
+    <span class="n">w</span><span class="p">)</span>
+        <span class="n">SELECT_WEEK</span><span class="o">=</span><span class="err">$</span><span class="n">OPTARG</span>
+        <span class="p">;;</span>
+    <span class="n">s</span><span class="p">)</span>
+        <span class="n">SHOW_SOLUTION</span><span class="o">=</span><span class="err">$</span><span class="n">OPTARG</span>
+        <span class="p">;;</span>
+    \<span class="err">?</span><span class="p">)</span>
+        <span class="n">echo</span> <span class="s2">&quot;Usage: serve [-w week] [-s solution]&quot;</span> <span class="mi">1</span><span class="o">&gt;&amp;</span><span class="mi">2</span>
+        <span class="n">exit</span> <span class="mi">1</span>
+        <span class="p">;;</span>
+    <span class="p">:)</span>
+        <span class="n">echo</span> <span class="s2">&quot;Invalid option: $OPTARG requires an argument&quot;</span> <span class="mi">1</span><span class="o">&gt;&amp;</span><span class="mi">2</span>
+        <span class="n">exit</span> <span class="mi">2</span>
+        <span class="p">;;</span>
+    <span class="n">esac</span>
+<span class="n">done</span>
+
+<span class="c1"># Serve MkDocs</span>
+<span class="n">mkdocs</span> <span class="n">serve</span> <span class="o">-</span><span class="n">f</span> <span class="n">config</span><span class="o">/</span><span class="n">mkdocs</span><span class="o">.</span><span class="n">yml</span>
+</code></pre></div>
+<p>Régénérez ensuite le <em>devcontainer</em> avec avec <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> ou <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> et cherchez <em>Remote-Containers: Rebuild Container</em>.</p>
+<p>La commande <code>serve</code> accepte maintenant deux paramètres : <code>-w</code> permet de choisir la
+semaine à publier et <code>-s</code> permet de contrôler la publication des solutions.</p>
+<h2 id="publication-incrementielle-du-contenu">Publication incrémentielle du contenu</h2>
+<p>Pour publier le contenu de manière incrémentielle, ajoutez un fichier <code>pages.j2</code>
+dans le dossier <code>docs</code> ainsi que dans tous les sous-dossiers de <code>docs</code>. La
+documentation pour ce fichier se trouve sur le <a href="https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin#features">dépôt git du plugin mkdocs-awesome-pages-plugin</a> et la configuration que nous
+avons faite permet de générer les fichiers <code>.pages</code> dynamiquement à partir des fichiers <code>pages.j2</code>
+qui se trouvent dans le même dossier.</p>
+<p>Un fichier <code>pages.j2</code> typique ressemble à ça:</p>
+<div class="highlight"><pre><span></span><code>nav:
+    - index.md
+{%- if env.SELECT_WEEK | int &gt;= 1 %}
+    - chapter1.md
+{%- endif %}
+{%- if env.SELECT_WEEK | int &gt;= 2 %}
+    - chapter2.md
+{%- endif %}
+{%- if env.SELECT_WEEK | int &gt;= 3 %}
+    - chapter3.md
+{%- endif %}
+{%- if env.SELECT_WEEK | int &gt;= 4 %}
+    - chapter4.md
+{%- endif %}
+</code></pre></div>
+<p>Le fichier <code>.pages</code> correspondant ne contiendra que les pages correspondantes
+à la semaine choisie. Par exemple, si vous démarrez le serveur avec la commande
+<code>serve -w 2</code>, le fichier <code>.pages</code> ci-dessus contiendra uniquement
+les lignes suivantes :</p>
+<div class="highlight"><pre><span></span><code>nav:
+    - index.md
+    - chapter1.md
+    - chapter2.md
+</code></pre></div>
+<h2 id="publication-incrementielle-des-solutions">Publication incrémentielle des solutions</h2>
+<p>Pour le contrôle de la publication des solutions, nous devons
+agir sur le contenu du fichier <em>markdown</em>. Nous utilisons pour
+cela les <a href="https://jinja.palletsprojects.com/en/3.1.x/templates/#if">blocs conditionnels</a> 
+du plugin <em>macros</em></p>
+<p>Un extrait d&rsquo;un fichier markdown typique ressemble à ça:</p>
+<div class="highlight"><pre><span></span><code>!!! todo &quot;Exercice N&quot;
+    Donnée de l&#39;exercice : ...
+
+{% if solution &gt;= 5 %}
+??? success &quot;Solution&quot;
+    La solution est ...
+{% endif %}
+</code></pre></div>
+<p>La solution ne sera alors publieé que si l&rsquo;option <code>-s</code> de la commande `serve``
+est suivi d&rsquo;un nombre supérieur ou égal à 5.</p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce 1</p>
+<p>Dans un chapitre donnée, les solutions seront souvent publiées en même temps. C&rsquo;est assez
+rare de ne devoir publier qu&rsquo;une partie des solution à la fois. Au lieu d&rsquo;écrire à chaque
+fois le même nombre dans l&rsquo;expression <code>{% if solution &gt;= 5 %}</code>, vous
+pouvez définir la semaine dans le
+<a href="https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data"><em>front matter</em></a>
+de la page et si la solution doit être publiée une semaine plus tard, faites comme ça :</p>
+<div class="highlight"><pre><span></span><code>---
+title: Titre de la page
+<span class="gu">week: 4</span>
+<span class="gu">---</span>
+...
+{% if solution &gt;= page.meta.week + 1 %}
+??? success &quot;Solution&quot;
+    La solution est ...
+{% endif %}
+</code></pre></div>
+<p>Et si vraiment une solution doit être publiée une semaine plus tard, rien
+ne vous empêche d&rsquo;écrire :</p>
+<div class="highlight"><pre><span></span><code>{% if solution &gt;= page.meta.week + 2 %}
+??? success &quot;Solution&quot;
+    La solution est ...
+{% endif %}
+</code></pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Astuce 2</p>
+<p>Si vous souhaitez numéroter les questions, vous pouvez utiliser
+une variable pour garantir une série régulière.</p>
+<p>Au début de votre contenu markdown, définissez une variable (par exemple <code>q</code>):</p>
+<div class="highlight"><pre><span></span><code>{% set q = 1 %}
+</code></pre></div>
+<p>et utilisez cette variable dans vos questions :</p>
+<div class="highlight"><pre><span></span><code>!!! todo &quot;Exercice {{ q }}&quot;
+    {% set q = q + 1 %}
+    ...
+</code></pre></div>
+<p>Vous pourez en tout temps insérer des exercices
+dans votre document sans avois à vous soucier
+de la numérotation.</p>
+</div>
+<h2 id="modification-du-workflow-pour-la-publication">Modification du workflow pour la publication</h2>
+<p>Les paramètres de contrôle de la publication peuvent
+être défini dans des variables d&rsquo;environnement.</p>
+<p>Modifiez le fichier <code>.github/workflows/website.yml</code> avec
+la section suivante :</p>
+<div class="highlight"><span class="filename">.github/workflows/website.yml</span><pre><span></span><code><span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">SELECT_WEEK</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">999</span><span class="w"></span>
+<span class="w">  </span><span class="nt">SHOW_SOLUTION</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">999</span><span class="w"></span>
+</code></pre></div>
+<p>Il vous suffit maintenant de changer ces valeurs chaque semaine
+et de faire un <em>push</em> de votre site pour l&rsquo;actualiser.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Je travaille sur une solution permettant d&rsquo;également automatiser
+ce processus avec un calendrier. <a href="mailto: jacques.supcik@hefr.ch">Contactez-moi</a>
+si cette option vous intéresse.</p>
+</div>
 
               
             </article>
@@ -391,13 +685,13 @@
       
       
         
-        <a href="../install/" class="md-footer__link md-footer__link--next" aria-label="Next: Installation les logiciels nécessaires" rel="next">
+        <a href="../printing/" class="md-footer__link md-footer__link--next" aria-label="Next: Impression du site (PDF)" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Installation les logiciels nécessaires
+              Impression du site (PDF)
             </div>
           </div>
           <div class="md-footer__button md-icon">
