@@ -44,7 +44,7 @@ COPY --chmod=0755 scripts/* /usr/local/bin/
 
 ```
 
-Dans `.devcontainer`, rréez maintenant le dossier `mkdocs-edu` dans lequel vous ajoutez le fichier `pyproject.toml` suivant :
+Dans `.devcontainer`, créez maintenant le dossier `mkdocs-edu` dans lequel vous ajoutez le fichier `pyproject.toml` suivant :
 
 ```toml
 [tool.poetry]

@@ -2,6 +2,8 @@
 title: Utilisation des "includes"
 ---
 
+# {{ page.title }}
+
 Pour des cours d'informatique, nous avons souvent besoin d'inclure des
 extraits de code ou de fichiers de configuration. On peut bien sûr écrire
 le contenu de ces fichiers directement dans le document _markdown_, mais
@@ -20,18 +22,6 @@ Allez dans le répertoire `.devcontainer/mkdocs-edu/` et tapez la commande suiva
 poetry add mkdocs_include_markdown_plugin
 ```
 
-{% raw %}
-!!! warning "Attention"
-    La version actuelle de `mkdocs_include_markdown_plugin` ne permet pas de
-    modifier les _tags_ `{%` et `%}` pour activer le plugin. En attendant que le 
-    responsable du projet fasse la mise à jour, vous pouvez installer le plugin
-    amélioré avec la commande suivante :
-
-    ```
-    poetry add git+https://github.com/supcik/mkdocs-include-markdown-plugin#dev-custom-tags
-    ```
-{% endraw %}
-
 Ajoutez aussi le _plugin_ dans le fichier `config/mkdocs.yml` :
 
 ```yml title="config/mkdocs.yml"
@@ -43,4 +33,4 @@ plugins:
 ```
 
 La [documentation du plugin](https://github.com/mondeja/mkdocs-include-markdown-plugin#documentation)
-vous expliquera comment l'utiliser.  
+vous expliquera comment l'utiliser.

@@ -2,6 +2,8 @@
 title: Contenu du premier site
 ---
 
+# {{ page.title }}
+
 Vous êtes maintenant prêt pour rédiger la première version de votre site. Créez un dossier `docs` (en dehors de `.devcontainer`) avec le fichier `index.md` suivant:
 
 ```markdown

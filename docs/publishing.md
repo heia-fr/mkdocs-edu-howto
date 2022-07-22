@@ -2,6 +2,8 @@
 title: Publication du site sur Internet
 ---
 
+# {{ page.title }}
+
 Pour rendre votre site disponible sur Internet, vous avez plusieurs solutions :
 
 - [GitHub Pages](https://pages.github.com/)
@@ -11,7 +13,7 @@ Pour rendre votre site disponible sur Internet, vous avez plusieurs solutions :
 - et bien d'autres encore...
 
 Je vais décrire ici la méthode pour utiliser les _GitHub Pages_, mais toutes
-les options ci-dessus sont possible avec MkDocs.
+les options ci-dessus sont possibles avec MkDocs.
 
 Pour utiliser _GitHub Pages_, vous devez héberger votre projet dans un dépôt git
 de GitHub.
@@ -43,15 +45,24 @@ Ainsi que le fichier suivant pour le _workflow_ :
 ```
 
 Lors du prochain _push_ avec ces nouveaux fichiers, l'action de github
-créra une nouvelle branche avec le contenu de votre site statique.
+créera une nouvelle branche avec le contenu de votre site statique.
 
 Afin de publier cette branche dans _GitHub Pages_, allez dans _Settings_ --> _Pages_
 et choisissez la branche _gh-pages_ comme source de votre site :
 
 ![settings](publishing/img/gh-pages-settings.png){ width="100%" }
 
-Après avoir sauvé cette configuration, votre site devrait être publié
-à l'adresse que vous pouvez voir sur la page des _settings_.
+Après avoir sauvé cette configuration, modifiez encore le fichier `config/mkdocs.yml` avec l'URL
+que vous avez dans les _settings_ :
+
+```yaml title="config/mkdocs.yml" hl_lines="2"
+site_name: My Education Site
+site_url: https://heia-fr.github.io/mkdocs-edu-howto/
+...
+```
+
+Faites un _commit_ et un _push_ et votre site devrait être publié
+à l'URL adéquate.
 
 Grâce aux _GitHub Actions_, votre site sera automatiquement publié
 lors de chaque _push_ de la branche _main_ du projet ou lors du

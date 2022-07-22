@@ -6,6 +6,11 @@ RUN apt-get update && \
     apt-get -y install --no-install-recommends \
   ghostscript \
   imagemagick \
+  libpango-1.0-0 \
+  libpangoft2-1.0-0 \
+  python3-brotli \
+  python3-cffi \
+  python3-pip \
   zip
 
 # Make sure that ImageMagick can convert PDF to images

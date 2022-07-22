@@ -1,6 +1,9 @@
 ---
 title: Publication incrémentielle
 ---
+
+# {{ page.title }}
+
 {% set tip = 1 %}
 
 Les sites pour l'éducation nécessitent souvent de pouvoir publier
@@ -58,7 +61,7 @@ avec le contenu suivant:
 {! include "incremental/inc/serve" !}
 ```
 
-Régénérez ensuite le _devcontainer_ avec avec ++ctrl+shift+p++ ou ++cmd+shift+p++ et cherchez _Remote-Containers: Rebuild Container_.
+Régénérez ensuite le _devcontainer_ avec ++ctrl+shift+p++ ou ++cmd+shift+p++ et cherchez _Remote-Containers: Rebuild Container_.
 
 La commande `serve` accepte maintenant deux paramètres : `-w` permet de choisir la
 semaine à publier et `-s` permet de contrôler la publication des solutions.
@@ -128,7 +131,7 @@ Un extrait d'un fichier markdown typique ressemble à ça:
 ```
 {% endraw %}
 
-La solution ne sera alors publieé que si l'option `-s` de la commande `serve``
+La solution ne sera alors publiée que si l'option `-s` de la commande `serve``
 est suivi d'un nombre supérieur ou égal à 5.
 
 !!! tip "Astuce {{ tip }}"

@@ -2,6 +2,8 @@
 title: Installation les logiciels nécessaires
 ---
 
+# {{ page.title }}
+
 La méthode que je décris sur ce site utilise les logiciels suivants:
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)

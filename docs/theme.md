@@ -2,7 +2,9 @@
 title: Thème du site
 ---
 
-Le thème du site (couleur, police d'écriture, ...) peut être modifié à l'aide du fichier `config/mkdocs.yml` et de fichiers `css` et `javascript` supplémentaires.
+# {{ page.title }}
+
+Le thème du site (couleur, police d'écriture ...) peut être modifié à l'aide du fichier `config/mkdocs.yml` et de fichiers `css` et `javascript` supplémentaires.
 
 Modifiez le fichier `config/mkdocs.yml` comme suit :
 
