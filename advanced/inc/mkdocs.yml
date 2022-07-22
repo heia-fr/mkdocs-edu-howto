@@ -1,0 +1,16 @@
+INHERIT: base.yml
+site_url: https://heia-fr.github.io/mkdocs-edu-howto/
+site_name: Création de sites web pour l'enseignement
+site_description: Création de sites web pour l'enseignement
+copyright: "Copyright &copy; 2022 Haute école d'ingénierie et d'architecture of Fribourg"
+
+repo_url: https://github.com/heia-fr/mkdocs-edu-howto
+repo_name: heia-fr/mkdocs-edu-howto
+edit_uri: ""
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/heia-fr/mkdocs-edu-howto
+    - icon: fontawesome/brands/dev
+      link: https://dev.to/supcik
