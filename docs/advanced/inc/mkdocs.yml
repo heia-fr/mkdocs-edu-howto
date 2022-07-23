@@ -9,6 +9,9 @@ repo_name: heia-fr/mkdocs-edu-howto
 edit_uri: ""
 
 extra:
+  analytics:
+    provider: google
+    property: G-KS8PETYQVZ
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/heia-fr/mkdocs-edu-howto
