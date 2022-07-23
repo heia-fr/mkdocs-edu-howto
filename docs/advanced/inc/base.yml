@@ -13,7 +13,6 @@ theme:
   favicon: 'assets/images/favicon.ico'
   features:
     - content.code.annotate
-    - navigation.sections
 
 markdown_extensions:
   admonition: {}
