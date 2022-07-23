@@ -45,7 +45,7 @@ python-versions = "*"
 python-dateutil = ">=2.8.1"
 
 [package.extras]
-dev = ["twine", "markdown", "flake8", "wheel"]
+dev = ["wheel", "flake8", "markdown", "twine"]
 
 [[package]]
 name = "htmlmin"
@@ -207,7 +207,7 @@ test = ["mkdocs-macros-test", "mkdocs-material (>=6.2)", "mkdocs-include-markdow
 
 [[package]]
 name = "mkdocs-material"
-version = "8.3.9"
+version = "8.4.0rc1"
 description = "Documentation that simply works"
 category = "main"
 optional = false
@@ -421,7 +421,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<4"
-content-hash = "e6ccfdea00ff788fd6f4c56ba736bb35077a106372299d7bc03a3da6a4bce96b"
+content-hash = "a7481f08bd0fd247ee10000c1fd071f4301ad17cc22d9e5278c938fe137e70b7"
 
 [metadata.files]
 bracex = [
@@ -528,8 +528,8 @@ mkdocs-macros-plugin = [
     {file = "mkdocs_macros_plugin-0.7.0-py3-none-any.whl", hash = "sha256:96bdabeb98b96139544f0048ea2f5cb80c7befde6b21e94c6d4596c22774cbcf"},
 ]
 mkdocs-material = [
-    {file = "mkdocs-material-8.3.9.tar.gz", hash = "sha256:dc82b667d2a83f0de581b46a6d0949732ab77e7638b87ea35b770b33bc02e75a"},
-    {file = "mkdocs_material-8.3.9-py2.py3-none-any.whl", hash = "sha256:263f2721f3abe533b61f7c8bed435a0462620912742c919821ac2d698b4bfe67"},
+    {file = "mkdocs-material-8.4.0rc1.tar.gz", hash = "sha256:1ee635cfe5cd96926b6175591ffc186bdca195fbc245aa9921bc07d90487ec33"},
+    {file = "mkdocs_material-8.4.0rc1-py2.py3-none-any.whl", hash = "sha256:ff23bb9f9bf3f346dcaca2fc2093019b63f4fc504c2268aed6e8d6978a4c72fa"},
 ]
 mkdocs-material-extensions = [
     {file = "mkdocs-material-extensions-1.0.3.tar.gz", hash = "sha256:bfd24dfdef7b41c312ede42648f9eb83476ea168ec163b613f9abd12bbfddba2"},
