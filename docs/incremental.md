@@ -198,7 +198,7 @@ est suivi d'un nombre supérieur ou égal à 5.
 ## Modification du workflow pour la publication
 
 Les paramètres de contrôle de la publication peuvent
-être défini dans des variables d'environnement.
+être définis dans des variables d'environnement.
 
 Modifiez le fichier `.github/workflows/website.yml` avec
 la section suivante :

@@ -4,7 +4,7 @@ title: Contenu du premier site
 
 # {{ page.title }}
 
-Vous êtes maintenant prêt pour rédiger la première version de votre site. Créez un dossier `docs` (en dehors de `.devcontainer`) avec le fichier `index.md` suivant:
+Vous êtes maintenant prêt pour rédiger la première version de votre site. Créez un dossier `docs` à la racine de votre projet (en dehors de `.devcontainer`) avec le fichier `index.md` suivant :
 
 ```markdown
 # Bienvenue sur MkDocs-Edu
@@ -12,7 +12,7 @@ Vous êtes maintenant prêt pour rédiger la première version de votre site. Cr
 Hello Education World
 ```
 
-et un dossier `config` avec le fichier `mkdocs.yml` suivant:
+Toujours à la racine du projet, créez un dossier `config` avec le fichier `mkdocs.yml` suivant :
 
 ```yaml
 site_name: My Education Site
