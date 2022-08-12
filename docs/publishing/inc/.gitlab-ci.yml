@@ -1,0 +1,31 @@
+image: python:bullseye
+
+pages:
+  script:
+    - |
+      apt-get update && \
+        export DEBIAN_FRONTEND=noninteractive && \
+        apt-get -y install --no-install-recommends \
+      ghostscript \
+      imagemagick \
+      libpango-1.0-0 \
+      libpangoft2-1.0-0 \
+      python3-brotli \
+      python3-cffi \
+      python3-pip \
+      zip
+    - sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
+    - pip install poetry
+    - (cd .devcontainer/mkdocs-edu && poetry config virtualenvs.create false && poetry install)
+    - python --version
+    - mkdocs --version
+    - mkdocs build --clean --config-file config/mkdocs.yml --site-dir ../public
+
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+
+
+

@@ -12,8 +12,11 @@ Pour rendre votre site disponible sur Internet, vous avez plusieurs solutions :
 - [Vercel](https://vercel.com/)
 - et bien d'autres encore...
 
-Je vais décrire ici la méthode pour utiliser les _GitHub Pages_, mais toutes
+Je vais décrire ici la méthode pour utiliser les _GitHub Pages_
+et pour les _Gitlab Pages_, mais toutes
 les options ci-dessus sont possibles avec MkDocs.
+
+## Github Pages
 
 Pour utiliser _GitHub Pages_, vous devez héberger votre projet dans un dépôt git
 de GitHub.
@@ -67,3 +70,36 @@ Faites un _commit_ et un _push_ et votre site devrait être publié
 Grâce aux _GitHub Actions_, votre site sera automatiquement publié
 lors de chaque _push_ de la branche _main_ du projet ou lors du
 _push_ d'un _tag_ commençant par "v".
+
+## Gitlab Pages
+
+Pour utiliser _GitLab Pages_, vous devez héberger votre projet dans un dépôt git
+de GitLab.
+
+
+Créez ensuite un fichier `.gitlab-ci.yml` à la racine de votre projet avec
+le contenu suivant :
+
+```yaml title=".gitlab-ci.yml"
+{% raw %}
+{! include "publishing/inc/.gitlab-ci.yml" ignore missing !}
+{% endraw %}
+```
+
+Lors du prochain _push_ avec ce nouveau fichier, le CI/CD de gitlab
+publiera votre site.
+
+Allez dans Settings --> Pages pour découvrir l'URL de votre site.
+
+Modifiez le fichier `config/mkdocs.yml` avec cet URL.
+
+```yaml title="config/mkdocs.yml" hl_lines="2"
+site_name: My Education Site
+site_url: https://heia-fr.gitlab.io/mkdocs-edu-howto/
+...
+```
+
+Faites un _commit_ et un _push_ pour activer le changement.
+
+Grâce au _GitLab CI/CD_, votre site sera automatiquement publié
+lors de chaque _push_ de la branche _main_ du projet.

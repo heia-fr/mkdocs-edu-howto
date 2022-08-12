@@ -1,3 +1,4 @@
 .DS_Store
 .pages
+__pycache__
 /public
