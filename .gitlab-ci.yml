@@ -19,7 +19,7 @@ pages:
     - (cd .devcontainer/mkdocs-edu && poetry config virtualenvs.create false && poetry install)
     - python --version
     - mkdocs --version
-    - mkdocs build --clean --config-file config/mkdocs.yml --site-dir ./public
+    - mkdocs build --clean --config-file config/mkdocs.yml --site-dir ../public
 
   artifacts:
     paths:
