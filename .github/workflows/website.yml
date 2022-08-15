@@ -27,7 +27,7 @@ jobs:
         uses: ./.github/actions/mkdocs-edu
 
       - name: Upload pages artifact
-      - uses: actions/upload-pages-artifact
+        uses: actions/upload-pages-artifact
 
   # Deploy site to Github pages
   deploy:
