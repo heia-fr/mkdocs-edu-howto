@@ -55,13 +55,13 @@ authors = ["Jacques Supcik <jacques.supcik@hefr.ch>"]
 license = "Apache-2.0"
 
 [tool.poetry.dependencies]
-python = "^3"
-mkdocs = "^1"
-mkdocs-material = "^8"
-mkdocs-macros-plugin = "^0.7"
-mkdocs-awesome-pages-plugin = "^2"
-jinja2-cli = "^0.8"
-
+python = ">=3.9,<4"
+mkdocs = "^1.3.1"
+mkdocs-material = "8.4.0rc1"
+mkdocs-awesome-pages-plugin = "^2.8.0"
+mkdocs-minify-plugin = "^0.5.0"
+python-markdown-math = "^0.8"
+jinja2-cli = "^0.8.2"
 [tool.poetry.dev-dependencies]
 
 [build-system]
