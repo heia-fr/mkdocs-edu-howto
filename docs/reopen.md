@@ -15,6 +15,12 @@ Rouvrez le dossier de votre site dans le _devcontainer_. Vous avez plusieurs moy
    <br/>
    ![rouvrir le projet dans un container](reopen/img/reopen.png){ width="75%" }
 
+!!! info "Remarque"
+    Cette opération peut facilement prendre plusieurs minutes en fonction de la vitesse
+    de votre ordinateur. N'hésitez pas à faire une pause :material-coffee:
+    et laissez votre ordinateur travailler. Rassurez-vous, ce n'est que la première
+    fois que ça prend autant de temps.
+
 Vous savez que vous travaillez dans un container si en bas à gauche, la barre d'état de vs-code affiche le contenu suivant: <img src="img/mkdocs_edu_status.png" style="vertical-align: middle; height: 1.2em"/>
 
 Ouvrez un terminal dans vs-code et tapez la commande `mkdocs --version`. Vous devriez observer quelque chose comme ça: 

@@ -18,6 +18,11 @@ les options ci-dessus sont possibles avec MkDocs.
 
 ## Github Pages
 
+!!! info "Information"
+    Il y a actuellement une [nouvelle manière](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/) de publier les pages
+    sur GitHub Pages. Cette page sera prochainement modifiée pour expliquer
+    cette nouvelle technique.
+
 Pour utiliser _GitHub Pages_, vous devez héberger votre projet dans un dépôt git
 de GitHub.
 
