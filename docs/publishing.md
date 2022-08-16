@@ -66,6 +66,10 @@ Vous obtenez l'URL à laquelle le site a été publié, en retournant dans _Sett
 
 ![settings](publishing/img/published.png){ width="80%" }
 
+ou en consultant le résultat de l'action :
+
+![result](publishing/img/actions_result.png){ width="80%" }
+
 Après avoir sauvé cette configuration, modifiez encore le fichier `config/mkdocs.yml` avec l'URL
 que vous avez dans les _settings_ :
 
