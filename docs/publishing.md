@@ -79,8 +79,7 @@ Faites un _commit_ et un _push_ et votre site devrait être publié
 à l'URL adéquate.
 
 Grâce aux _GitHub Actions_, votre site sera automatiquement publié
-lors de chaque _push_ de la branche _main_ du projet ou lors du
-_push_ d'un _tag_ commençant par "v".
+lors de chaque _push_ de la branche _main_ du projet.
 
 ## Gitlab Pages
 
