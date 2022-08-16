@@ -12,19 +12,26 @@ Pour rendre votre site disponible sur Internet, vous avez plusieurs solutions :
 - [Vercel](https://vercel.com/)
 - et bien d'autres encore...
 
-Je vais décrire ici la méthode pour utiliser les _GitHub Pages_
+Je décris ici la méthode pour utiliser les _GitHub Pages_
 et pour les _Gitlab Pages_, mais toutes
 les options ci-dessus sont possibles avec MkDocs.
 
 ## Github Pages
 
-!!! info "Information"
-    Il y a actuellement une [nouvelle manière](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/) de publier les pages
-    sur GitHub Pages. Cette page sera prochainement modifiée pour expliquer
-    cette nouvelle technique.
+!!! warning "Attention"
+    La technique expliquée ici est une
+    [nouvelle manière](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/)
+    de publier sur GitHub Pages. Cette technique est encore en _Bêta_, mais elle est
+    plus simple à utiliser que la technique précédente et fonctionne déjà très bien.
 
 Pour utiliser _GitHub Pages_, vous devez héberger votre projet dans un dépôt git
 de GitHub.
+
+Modifiez les paramètres des _GitHub Pages_ en cliquant le menu _Settings_
+--> _Pages_ et définissez _GitHub Actions_ comme source :
+
+![settings](publishing/img/actions_beta.png){ width="80%" }
+
 
 Créez ensuite un dossier `.github` à la racine de votre projet
 
@@ -53,12 +60,11 @@ Ainsi que le fichier suivant pour le _workflow_ :
 ```
 
 Lors du prochain _push_ avec ces nouveaux fichiers, l'action de github
-créera une nouvelle branche avec le contenu de votre site statique.
+publiera le contenu de votre site sur _GitHub Pages_.
 
-Afin de publier cette branche dans _GitHub Pages_, allez dans _Settings_ --> _Pages_
-et choisissez la branche _gh-pages_ comme source de votre site :
+Vous obtenez l'URL à laquelle le site a été publié, en retournant dans _Settings_ --> _Pages_ :
 
-![settings](publishing/img/gh-pages-settings.png){ width="100%" }
+![settings](publishing/img/published.png){ width="80%" }
 
 Après avoir sauvé cette configuration, modifiez encore le fichier `config/mkdocs.yml` avec l'URL
 que vous avez dans les _settings_ :
@@ -81,7 +87,6 @@ _push_ d'un _tag_ commençant par "v".
 Pour utiliser _GitLab Pages_, vous devez héberger votre projet dans un dépôt git
 de GitLab.
 
-
 Créez ensuite un fichier `.gitlab-ci.yml` à la racine de votre projet avec
 le contenu suivant :
 
@@ -96,7 +101,7 @@ publiera votre site.
 
 Allez dans Settings --> Pages pour découvrir l'URL de votre site.
 
-Modifiez le fichier `config/mkdocs.yml` avec cet URL.
+Modifiez le fichier `config/mkdocs.yml` avec cette URL.
 
 ```yaml title="config/mkdocs.yml" hl_lines="2"
 site_name: My Education Site
