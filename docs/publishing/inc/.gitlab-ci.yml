@@ -1,6 +1,9 @@
 image: python:bullseye
 
 pages:
+  variables:
+    SELECT_WEEK: "999"
+    SHOW_SOLUTION: "999"
   script:
     - |
       apt-get update && \
