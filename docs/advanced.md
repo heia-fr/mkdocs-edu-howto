@@ -4,25 +4,6 @@ title: Techniques avancées
 
 # {{ page.title }}
 
-## Configuration avancée
-
-Lorsque le fichier de configuration `config/mkdocs.yml` devient trop grand,
-il peut être avantageux de le diviser et d'utiliser l'[héritage](https://www.mkdocs.org/user-guide/configuration/#configuration-inheritance)
-
-Pour le site que vous voyez, la configuration est composée de deux fichiers. Un fichier de base avec
-une configuration "standard" pour les sites d'éducation :
-
-```yaml title="config/base.yml"
-{! include "advanced/inc/base.yml" !}
-```
-
-Et un fichier `mkdocs.yml` qui _hérite_ du fichier de base et qui configure
-les paramètres spécifiques au site
-
-```yaml title="config/mkdocs.yml"
-{! include "advanced/inc/mkdocs.yml" !}
-```
-
 ## Sites multilangues
 
 Si vous souhaitez que votre site soit disponible dans plusieurs langues, vous

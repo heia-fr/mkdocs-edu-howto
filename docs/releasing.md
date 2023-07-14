@@ -18,22 +18,20 @@ inconvénients:
 - Les documents (PDF) intégrés au site ne sont également plus disponibles
 
 Une autre solution, et c'est celle que nous conseillons, consiste à produire un fichier _zip_
-avec le contenu du site. Pour cela, nous allons encore modifier le script `serve` pour qu'il
-permette aussi la génération du site (_build_) :
+avec le contenu du site. Pour cela, il suffit de construire une version statique du site
+avec la commande :
 
-```python title=".devcontainer/scripts/serve" hl_lines="10 13-15 23 33-39"
-{! include "releasing/inc/serve" !}
+```bash
+SHOW_SOLUTION=999 LECTURE_WEEK=999 poetry run mkdocs build -d public
 ```
 
-Régénérez le _devcontainer_ avec ++ctrl+shift+p++ ou ++cmd+shift+p++ et cherchez _Remote-Containers: Rebuild Container_.
-
-La commande `serve -b` crée maintenant un dossier `public` contenant la totalité du site.
+Vous aurez alors un dossier `public` contenant la totalité du site.
 
 Dans ce dossier, ajoutez encore un fichier `.prefix` indiquant le _préfixe_ du site. Vous trouverez ce préfixe
-dans le fichier `config/mkdocs.yml` à la ligne commençant par `site_url`. Pour rappel, voici le début
-du fichier `config/mkdocs.yml` de notre exemple :
+dans le fichier `mkdocs.yml` à la ligne commençant par `site_url`. Pour rappel, voici le début
+du fichier `mkdocs.yml` de notre exemple :
 
-```yaml title="config/mkdocs.yml" hl_lines="2"
+```yaml title="mkdocs.yml" hl_lines="2"
 site_name: My Education Site
 site_url: https://heia-fr.github.io/mkdocs-edu-howto/
 ...

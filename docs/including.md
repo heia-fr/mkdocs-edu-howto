@@ -16,16 +16,15 @@ pour _MkDocs_.
 
 Ajoutez le module python du _plugin_ dans votre configuration de _mkdocs_:
 
-Allez dans le répertoire `.devcontainer/mkdocs-edu/` et tapez la commande suivante
+Allez à la racine de votre projet et tapez la commande suivante
 
 ```bash
 poetry add mkdocs_include_markdown_plugin
 ```
 
-Ajoutez aussi le _plugin_ dans le fichier `config/mkdocs.yml` :
+Ajoutez aussi le _plugin_ dans le fichier `mkdocs.yml` :
 
-```yml title="config/mkdocs.yml"
-...
+```yml title="mkdocs.yml"
 plugins:
   include-markdown:
     opening_tag: '{!'

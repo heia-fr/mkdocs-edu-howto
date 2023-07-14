@@ -6,13 +6,10 @@ title: Thème du site
 
 Le thème du site (couleur, police d'écriture ...) peut être modifié à l'aide du fichier `config/mkdocs.yml` et de fichiers `css` et `javascript` supplémentaires.
 
-Modifiez le fichier `config/mkdocs.yml` comme suit :
+Modifiez le fichier `mkdocs.yml` comme suit :
 
-```yaml
+```yaml title="mkdocs.yml"
 site_name: My Education Site
-
-docs_dir: '../docs/'
-site_dir: '../public/'
 
 theme:
   name: material
@@ -20,7 +17,7 @@ theme:
   font:
     text: 'Roboto'
     code: 'IBM Plex Mono'
-  custom_dir: '../overrides/'
+  custom_dir: 'overrides/'
   logo: 'assets/images/heiafr.png'
   favicon: 'assets/images/favicon.ico'
   features:
@@ -48,12 +45,12 @@ overrides
 
 Dans le dossier `overrides/assets/images`, copiez les images suivantes:
 
-- [favicon.ico](https://github.com/heia-fr/mkdocs-edu-howto/blob/main/overrides/assets/images/favicon.ico)
-- [heiafr.png](https://github.com/heia-fr/mkdocs-edu-howto/blob/main/overrides/assets/images/heiafr.png)
+- [favicon.ico](https://raw.githubusercontent.com/heia-fr/mkdocs-edu-howto/main/overrides/assets/images/favicon.ico)
+- [heiafr.png](https://raw.githubusercontent.com/heia-fr/mkdocs-edu-howto/main/overrides/assets/images/heiafr.png)
 
 Puis ajoutez le fichier `overrides/javascripts/mathjax.js` :
 
-```javascript
+```javascript title="overrides/javascripts/mathjax.js"
 window.MathJax = {
     tex: {
       inlineMath: [["\\(", "\\)"]],
@@ -74,7 +71,7 @@ window.MathJax = {
 
 et `overrides/stylesheets/extra.css`:
 
-```css
+```css title="overrides/stylesheets/extra.css"
 :root {
     --md-primary-fg-color:        #C32823;
     --md-primary-fg-color--light: #fd5e4c;
@@ -91,4 +88,4 @@ Avec cette configuration, la couleur de base du site est celle de la filière IS
 
 Le site devrait maintenant ressembler à ça:
 
-![site avec le thème de ISC](theme/img/site_red.png){ width="100%" }
+![site avec le thème de ISC](theme/img/site_red.webp){ class="screen" width="100%" }

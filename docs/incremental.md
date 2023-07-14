@@ -16,62 +16,29 @@ que lorsque les étudiants ont rendu leurs copies.
 Pour permettre les opérations ci-dessus, nous avons besoin
 d'installer quelques _plugins_ supplémentaires.
 
-Allez dans le répertoire `.devcontainer/mkdocs-edu/` et tapez les commandes suivantes
+Allez à la racine de votre projet et tapez les commandes suivantes
 
 ```bash
 poetry add mkdocs-awesome-pages-plugin
 poetry add mkdocs-macros-plugin
-poetry add mkdocs-simple-hooks
+poetry add mkdocs-pages-j2-plugin
 ```
 
-Ajoutez aussi les _plugins_ dans le fichier `config/mkdocs.yml` :
+Ajoutez aussi les _plugins_ dans le fichier `mkdocs.yml` :
 
-```yml title="config/mkdocs.yml"
-...
+```yml title="mkdocs.yml"
 plugins:
-  ...
-  awesome-pages: {}
-  macros: {}
-  mkdocs-simple-hooks:
-    hooks:
-      on_pre_build: "hooks:on_pre_build"
+  - awesome-pages
+  - macros
+  - pages-j2
 ```
-
-Ajoutez aussi le fichier `hooks.py` à la racine de votre projet:
-
-```python title="hooks.py"
-{! include "incremental/inc/hooks.py" !}
-```
-
-Ce script permet de générer les fichiers `.pages` pour le plugin `awesome-pages`
-à partir des _templates_ `pages.j2`. Nous reviendrons sur l'utilisation de ces
-fichiers plus tard.
-
-Ajouter encore le fichier `main.py` dans le dossier `config/` :
-
-```python title="config/main.py"
-{! include "incremental/inc/main.py" !}
-```
-
-Vous devez maintenant modifier le script `serve` que nous avons vu
-dans un chapitre précédent. Modifier le fichier `.devcontainer/scripts/serve`
-avec le contenu suivant:
-
-```python title=".devcontainer/scripts/serve"
-{! include "incremental/inc/serve" !}
-```
-
-Régénérez ensuite le _devcontainer_ avec ++ctrl+shift+p++ ou ++cmd+shift+p++ et cherchez _Remote-Containers: Rebuild Container_.
-
-La commande `serve` accepte maintenant deux paramètres : `-w` permet de choisir la
-semaine à publier et `-s` permet de contrôler la publication des solutions.
 
 ## Publication incrémentielle du contenu
 
 Pour publier le contenu de manière incrémentielle, ajoutez un fichier `pages.j2`
 dans le dossier `docs` ainsi que dans tous les sous-dossiers de `docs`. La
-documentation pour ce fichier se trouve sur le [dépôt git du plugin mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin#features) et la configuration que nous
-avons faite permet de générer les fichiers `.pages` dynamiquement à partir des fichiers `pages.j2`
+documentation pour ce fichier se trouve sur le [dépôt git du plugin mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin#features) et le plugin `pages-j2`
+permet de générer les fichiers `.pages` dynamiquement à partir des fichiers `pages.j2`
 qui se trouvent dans le même dossier.
 
 Un fichier `pages.j2` typique ressemble à ça:
@@ -80,26 +47,30 @@ Un fichier `pages.j2` typique ressemble à ça:
 ```text
 nav:
     - index.md
-{%- if env.SELECT_WEEK | int >= 1 %}
+{%- if extra.lecture_week | int >= 1 %}
     - chapter1.md
 {%- endif %}
-{%- if env.SELECT_WEEK | int >= 2 %}
+{%- if extra.lecture_week | int >= 2 %}
     - chapter2.md
 {%- endif %}
-{%- if env.SELECT_WEEK | int >= 3 %}
+{%- if extra.lecture_week | int >= 3 %}
     - chapter3.md
 {%- endif %}
-{%- if env.SELECT_WEEK | int >= 4 %}
+{%- if extra.lecture_week | int >= 4 %}
     - chapter4.md
 {%- endif %}
 
 ```
 {% endraw %}
 
-Le fichier `.pages` correspondant ne contiendra que les pages correspondantes
-à la semaine choisie. Par exemple, si vous démarrez le serveur avec la commande
-`serve -w 2`, le fichier `.pages` ci-dessus contiendra uniquement
-les lignes suivantes :
+Vous pouvez définir la variable `lecture_week` dans la section `extra` du fichier `mkdocs.yml`. Par exemple, si vous définissez la variable comme suit :
+
+```yml title="mkdocs.yml"
+extra:
+  lecture_week: 2
+```
+
+Le fichier `.pages` correspondant ne contiendra que les deux premiers chapitres.
 
 {% raw %}
 ```text
@@ -109,6 +80,27 @@ nav:
     - chapter2.md
 ```
 {% endraw %}
+
+Si vous souhaitez définir la variable lors de la génération du site, vous pouvez utiliser
+les variables d'environnement. Si vous définissez la variable `extra_lecture_week` ainsi :
+
+```yml title="mkdocs.yml"
+extra:
+  lecture_week: !ENV LECTURE_WEEK
+```
+
+vous pourrez alors définir la variable `LECTURE_WEEK` lors de la génération du site. Par exemple, pour les deux premières semaines, vous pouvez utiliser la commande suivante :
+
+```bash
+LECTURE_WEEK=2 poetry run mkdocs serve
+```
+
+Dans le fichier `mkdocs.yml`, vous pouvez aussi définir une valeur par défaut pour la variable `LECTURE_WEEK` :
+
+```yml title="mkdocs.yml"
+extra:
+  lecture_week: !ENV [LECTURE_WEEK, '999']
+```
 
 ## Publication incrémentielle des solutions
 
@@ -124,15 +116,32 @@ Un extrait d'un fichier markdown typique ressemble à ça:
 !!! todo "Exercice N"
     Donnée de l'exercice : ...
 
-{% if solution >= 5 %}
+{% if show_solution >= 5 %}
 ??? success "Solution"
     La solution est ...
 {% endif %}
 ```
 {% endraw %}
 
-La solution ne sera alors publiée que si l'option `-s` de la commande `serve``
-est suivi d'un nombre supérieur ou égal à 5.
+La variable `show_solution` est définie dans la section `extra` du fichier `mkdocs.yml`. Par exemple:
+
+```yml title="mkdocs.yml"
+extra:
+  show_solution: 2
+```
+
+Tout comme pour la publication incrémentielle du contenu, vous pouvez définir la variable `show_solution` lors de la génération du site en utilisant les variables d'environnement. Si vous définissez la variable `extra_show_solution` ainsi :
+
+```yml title="mkdocs.yml"
+extra:
+  show_solution: !ENV SHOW_SOLUTION
+```
+
+vous pourrez alors définir la variable `SHOW_SOLUTION` lors de la génération du site. Par exemple:
+
+```bash
+SHOW_SOLUTION=1 LECTURE_WEEK=2 poetry run mkdocs serve
+```
 
 !!! tip "Astuce {{ tip }}"
     {% set tip = tip + 1 %}
@@ -150,7 +159,7 @@ est suivi d'un nombre supérieur ou égal à 5.
     week: 4
     ---
     ...
-    {% if solution >= page.meta.week + 1 %}
+    {% if show_solution >= page.meta.week + 1 %}
     ??? success "Solution"
         La solution est ...
     {% endif %}
@@ -162,7 +171,7 @@ est suivi d'un nombre supérieur ou égal à 5.
 
 {% raw %}
     ```markdown
-    {% if solution >= page.meta.week + 2 %}
+    {% if show_solution >= page.meta.week + 2 %}
     ??? success "Solution"
         La solution est ...
     {% endif %}
@@ -205,14 +214,14 @@ la section suivante :
 
 ```yaml title=".github/workflows/website.yml"
 env:
-  SELECT_WEEK: 999
-  SHOW_SOLUTION: 999
+  LECTURE_WEEK: 2
+  SHOW_SOLUTION: 1
 ```
 
 Il vous suffit maintenant de changer ces valeurs chaque semaine
 et de faire un _push_ de votre site pour l'actualiser.
 
 !!! info "Info"
-    Je travaille sur une solution permettant d'également automatiser
-    ce processus avec un calendrier. [Contactez-moi](mailto: jacques.supcik@hefr.ch)
-    si cette option vous intéresse.
+    Le plugin [mkdocs-calendar-plugin](https://github.com/supcik/mkdocs-calendar-plugin)
+    permet de définir des variables `extra` en fonction de la date du jour. Vous pouvez
+    ainsi complètement automatiser la publication incrémentielle de votre site.

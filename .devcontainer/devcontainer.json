@@ -1,6 +1,0 @@
-{
-    "name": "MkDocs-Edu",
-    "build": {
-        "dockerfile": "Dockerfile"
-    }
-}
