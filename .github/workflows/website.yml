@@ -3,8 +3,7 @@ name: publish-websites
 on:
   workflow_dispatch:
   push:
-    branches:
-      - 'main'
+  pull_request:
 
 env:
   LECTURE_WEEK: 999
@@ -58,3 +57,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+        if: github.event_name == 'push' && (startsWith(github.ref, 'refs/tags') || github.ref == 'refs/heads/main')
