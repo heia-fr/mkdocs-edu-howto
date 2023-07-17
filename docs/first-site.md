@@ -56,6 +56,12 @@ Vous pouvez maintenant créer votre premier site mkdocs avec la commande suivant
 poetry run mkdocs new .
 ```
 
+puis
+
+```bash
+poetry run mkdocs serve
+```
+
 Mkdocs écrira ces quelques lignes dans la console :
 
 ```text
