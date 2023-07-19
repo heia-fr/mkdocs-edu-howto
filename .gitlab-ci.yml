@@ -12,7 +12,7 @@ pages:
       zip
     - pip install poetry==1.5.1
     - poetry config virtualenvs.in-project true
-    - poetry install
+    - poetry install --no-root
     - poetry run mkdocs build -d public
 
   artifacts:
