@@ -35,7 +35,7 @@ Version [0.1.0]:
 Description []:  Demo Web Site
 Author [Jacques Supcik <jacques.supcik@hefr.ch>, n to skip]:
 License []:  Apache-2
-Compatible Python versions [^3.11]:
+Compatible Python versions [>=3.10,<3.12]:
 
 Would you like to define your main dependencies interactively? (yes/no) [yes] no
 Would you like to define your development dependencies interactively? (yes/no) [yes] no
@@ -43,6 +43,27 @@ Generated file
 ...
 Do you confirm generation? (yes/no) [yes]
 ```
+
+!!! warning "Attention"
+    Lors de la rédaction de cette page, la dernière version de Python était la 3.11.4. Python 3.12 était en _pre-release_ et Python 3.13 n'existait pas encore.
+    
+    La plupart des paquets demandent au moins la version 3.7 de Python, certains demandent la version 3.8 et quelques-uns demandent la version 3.10.
+    Afin de couvrir tous les cas, nous allons demander une version 3.10 ou 3.11. On peut éventuellement laisser la version 3.12, mais il faut exclure
+    les versions supérieures à 3.12 car certains paquets sont prudents et ne peuvent pas s'installer si on autorise une version supérieure à 3.12.
+
+    Pour la configuration de la version de python (`Compatible Python versions`), assurez-vous donc
+    de mettre `>=3.10,<3.12` ou `>=3.10,<3.13`. 
+    
+    Il se peut que `poetry` vous propose quelque chose comme `^3.11`. Dans ce cas, modifiez
+    la proposition par `>=3.10,<3.12` (ou `>=3.10,<3.13`).
+
+    Si vous avez déjà créé le fichier `pyproject.toml`, vous pouvez le modifier directement
+    avec votre éditeur de texte préféré. Vous devriez avoir quelque chose comme :
+    ```toml
+    [tool.poetry.dependencies]
+    python = ">=3.10,<3.12"
+    ...
+    ```
 
 Ajoutez maintenant les dépendances :
 
