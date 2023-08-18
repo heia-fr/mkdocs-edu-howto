@@ -1,0 +1,9 @@
+{
+    "name": "mkdocs-edu",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": { "VARIANT": "3.11" }
+    },
+
+    "image": "mcr.microsoft.com/devcontainers/python:3.11"
+}
