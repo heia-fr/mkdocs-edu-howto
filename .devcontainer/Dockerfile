@@ -1,4 +1,4 @@
-ARG VARIANT="3.11"
+ARG VARIANT="3.11-bookworm"
 
 FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 
