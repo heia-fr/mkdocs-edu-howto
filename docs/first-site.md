@@ -14,15 +14,9 @@ Pour créer votre premier site, créez un nouveau dossier et ouvrez une console 
 Créez maintenant un nouveau projet `Poetry`.
 
 !!! tip "Astuce"
-    `Poetry` crée un environnement virtuel Python quelque part dans votre système. Personnellement,
-    je préfère que cet environnement soit créé dans le dossier `.venv` de mon projet.
-    Pour cela, j'ai configuré `Poetry` avec la commande suivante :
+    `Poetry` crée un environnement virtuel Python dans le dossier `.venv` du projet.
 
-    ```bash
-    poetry config virtualenvs.in-project true
-    ```
-
-    A vous de voir si vous préférez cette option ou non.
+    Cette configuration est définie dans le fichier `poetry.toml`. Quand elle n'est pas définie, Poetry crée un environnement virtuel dans [un répertoire de votre système](https://python-poetry.org/docs/configuration/#data-directory). A vous de voir si vous préférez cette option ou non.
 
 Tapez la commande `poetry init` et répondez aux questions. N'ajoutez pas encore les
 dépendances. Par exemple :

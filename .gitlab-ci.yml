@@ -10,8 +10,7 @@ pages:
       python3-cffi \
       python3-pip \
       zip
-    - pip install poetry==1.5.1
-    - poetry config virtualenvs.in-project true
+    - pip install poetry==1.6.1
     - poetry install --no-root
     - poetry run mkdocs build -d public
 
