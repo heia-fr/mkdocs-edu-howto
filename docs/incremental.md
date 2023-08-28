@@ -116,7 +116,7 @@ Un extrait d'un fichier markdown typique ressemble à ça:
 !!! todo "Exercice N"
     Donnée de l'exercice : ...
 
-{% if show_solution >= 5 %}
+{% if extra.show_solution >= 5 %}
 ??? success "Solution"
     La solution est ...
 {% endif %}
