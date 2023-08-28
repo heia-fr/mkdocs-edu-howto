@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mkdocs-edu"
-version = "0.1.1"
+version = "0.2.2"
 description = "mkdocs for education web site"
 authors = ["Jacques Supcik <jacques.supcik@hefr.ch>"]
 license = "Apache-2.0"
