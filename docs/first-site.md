@@ -65,6 +65,19 @@ Do you confirm generation? (yes/no) [yes]
     ...
     ```
 
+    Pour utiliser une version précise de Python indépendante de celle de votre OS, vous pouvez 
+    utiliser [`pyenv`](https://github.com/pyenv/pyenv). Une fois `pyenv` installé, installer la
+    version recommandée et l'utiliser via les commandes suivantes:
+
+    ```sh
+    # Installe la version configurée dans `.python-version`
+    pyenv install
+    
+    # Force explicitement Poetry à utiliser la version mise en place par pyenv
+    poetry env use $(which python)
+    poetry install
+    ```
+
 Ajoutez maintenant les dépendances :
 
 ```bash
