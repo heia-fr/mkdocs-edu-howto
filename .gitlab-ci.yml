@@ -1,21 +1,43 @@
-image: python:bullseye
+image: python:3.11-bookworm
 
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH
+
+cache:
+  paths:
+    - ".venv/"
+
+before_script:
+  - |
+    apt-get update && \
+      export DEBIAN_FRONTEND=noninteractive && \
+      apt-get -y install --no-install-recommends \
+    python3-brotli \
+    python3-cffi \
+    python3-pip \
+    zip
+  - pip install poetry==1.6.1
+  - poetry install --no-root
+
+# Build and publish main branch to GitLab pages
 pages:
+  stage: deploy
   script:
-    - |
-      apt-get update && \
-        export DEBIAN_FRONTEND=noninteractive && \
-        apt-get -y install --no-install-recommends \
-      python3-brotli \
-      python3-cffi \
-      python3-pip \
-      zip
-    - pip install poetry==1.6.1
-    - poetry install --no-root
     - poetry run mkdocs build -d public
-
   artifacts:
     paths:
       - public
-  only:
-    - main
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+# Build without publishing to detect breaking changes on non-main branches
+test:
+  stage: test
+  script:
+    - poetry run mkdocs build -d test
+  artifacts:
+    paths:
+      - test
+  rules:
+    - if: $CI_COMMIT_BRANCH != "main"
