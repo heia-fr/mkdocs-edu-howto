@@ -17,8 +17,7 @@ before_script:
     python3-cffi \
     python3-pip \
     zip
-  - pip install poetry==1.5.1
-  - poetry config virtualenvs.in-project true
+  - pip install poetry==1.6.1
   - poetry install --no-root
 
 # Build and publish main branch to GitLab pages
