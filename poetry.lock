@@ -656,13 +656,13 @@ test = ["mkdocs-include-markdown-plugin", "mkdocs-macros-test", "mkdocs-material
 
 [[package]]
 name = "mkdocs-material"
-version = "9.2.5"
+version = "9.2.6"
 description = "Documentation that simply works"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mkdocs_material-9.2.5-py3-none-any.whl", hash = "sha256:315a59725f0565bccfec7f9d1313beae7658bf874a176264b98f804a0cbc1298"},
-    {file = "mkdocs_material-9.2.5.tar.gz", hash = "sha256:02b4d1f662bc022e9497411e679323c30185e031a08a7004c763aa8d47ae9a29"},
+    {file = "mkdocs_material-9.2.6-py3-none-any.whl", hash = "sha256:84bc7e79c1d0bae65a77123efd5ef74731b8c3671601c7962c5db8dba50a65ad"},
+    {file = "mkdocs_material-9.2.6.tar.gz", hash = "sha256:3806c58dd112e7b9677225e2021035ddbe3220fbd29d9dc812aa7e01f70b5e0a"},
 ]
 
 [package.dependencies]
@@ -750,13 +750,13 @@ test = ["mkdocs-awesome-pages-plugin (>=2.9.1,<3.0.0)", "mkdocs-macros-plugin (>
 
 [[package]]
 name = "mkdocs-static-i18n"
-version = "1.0.0"
+version = "1.0.2"
 description = "MkDocs i18n plugin using static translation markdown files"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mkdocs_static_i18n-1.0.0-py3-none-any.whl", hash = "sha256:6958f8836a101cc8285a5721c3eb6089b1c79f14456f7f9a8e07679e4da00b6e"},
-    {file = "mkdocs_static_i18n-1.0.0.tar.gz", hash = "sha256:e305ae7c0276dcdd682ce71cf6d6c0d4c1da226e8e8da1daa403d81fdac20a3f"},
+    {file = "mkdocs_static_i18n-1.0.2-py3-none-any.whl", hash = "sha256:a9c65c009f9108d9c155b691002ee8da0d0a14c379323de8c157cf79a4cc6aa5"},
+    {file = "mkdocs_static_i18n-1.0.2.tar.gz", hash = "sha256:a4e39a465378f68f92110b423116b937a929286441bdad4da068272db408f5fe"},
 ]
 
 [package.dependencies]
@@ -843,13 +843,13 @@ plugins = ["importlib-metadata"]
 
 [[package]]
 name = "pymdown-extensions"
-version = "10.2"
+version = "10.2.1"
 description = "Extension pack for Python Markdown."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pymdown_extensions-10.2-py3-none-any.whl", hash = "sha256:fbb86243db9a681602e3b869deef000211c55d0261015a5cc41d6f34d2afc57f"},
-    {file = "pymdown_extensions-10.2.tar.gz", hash = "sha256:06042274876eb4267f12a389daf505eabaebc38bdca26725560c9afda5867549"},
+    {file = "pymdown_extensions-10.2.1-py3-none-any.whl", hash = "sha256:bded105eb8d93f88f2f821f00108cb70cef1269db6a40128c09c5f48bfc60ea4"},
+    {file = "pymdown_extensions-10.2.1.tar.gz", hash = "sha256:d0c534b4a5725a4be7ccef25d65a4c97dba58b54ad7c813babf0eb5ba9c81591"},
 ]
 
 [package.dependencies]
@@ -1251,13 +1251,13 @@ watchmedo = ["PyYAML (>=3.10)"]
 
 [[package]]
 name = "wcmatch"
-version = "8.4.1"
+version = "8.5"
 description = "Wildcard/glob file name matcher."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "wcmatch-8.4.1-py3-none-any.whl", hash = "sha256:3476cd107aba7b25ba1d59406938a47dc7eec6cfd0ad09ff77193f21a964dee7"},
-    {file = "wcmatch-8.4.1.tar.gz", hash = "sha256:b1f042a899ea4c458b7321da1b5e3331e3e0ec781583434de1301946ceadb943"},
+    {file = "wcmatch-8.5-py3-none-any.whl", hash = "sha256:14554e409b142edeefab901dc68ad570b30a72a8ab9a79106c5d5e9a6d241bd5"},
+    {file = "wcmatch-8.5.tar.gz", hash = "sha256:86c17572d0f75cbf3bcb1a18f3bf2f9e72b39a9c08c9b4a74e991e1882a8efb3"},
 ]
 
 [package.dependencies]
@@ -1266,4 +1266,4 @@ bracex = ">=2.1.1"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.12"
-content-hash = "062b60eaa71b2add9a8ee4d50bf8a17d47124392c081192de855a6efcfec0f65"
+content-hash = "68f3f894773e456ef722e34dcd664208fd79ad90db6da91cd9d6028af1d1801f"
