@@ -19,7 +19,7 @@ mkdocs-material = "^9.2.6"
 mkdocs-mermaid2-plugin = "^1.0.8"
 mkdocs-minify-plugin = "^0.7.1"
 mkdocs-pages-j2-plugin = "^0.2.0"
-mkdocs-static-i18n = "^1.0.2"
+mkdocs-static-i18n = "^1.0.3"
 python-markdown-comments = { git = "https://github.com/ryneeverett/python-markdown-comments.git", rev = "973fe7b" }
 python-markdown-math = "^0.8"
 platformdirs = "^3.10.0"
