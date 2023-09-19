@@ -7,7 +7,7 @@ license = "Apache-2.0"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
-mkdocs = "^1.5.2"
+mkdocs = "^1.5.3"
 mkdocs-awesome-pages-plugin = "^2.9.2"
 mkdocs-calendar-plugin = "^0.4.0"
 mkdocs-git-revision-date-localized-plugin = "^1.2.0"
