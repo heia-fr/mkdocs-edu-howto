@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: uv sync --no-install-project
       - name: Build site
-        run: uv run properdocs build -d publi
+        run: uv run properdocs build -d public
       - name: Upload site pages artifact
         if: |
           (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
