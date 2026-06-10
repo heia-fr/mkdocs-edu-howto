@@ -21,7 +21,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build mkdocs site
+      - name: Build properdocs site
         uses: ./.github/actions/mkdocs-edu
 
       - name: Upload pages artifact
@@ -33,9 +33,10 @@ jobs:
   deploy:
     needs: build
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates
-                        # from an appropriate source
+      pages: write # to deploy to Pages
+      id-token:
+        write # to verify the deployment originates
+        # from an appropriate source
 
     environment:
       name: github-pages

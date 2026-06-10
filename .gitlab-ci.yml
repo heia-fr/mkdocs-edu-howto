@@ -1,4 +1,4 @@
-image: python:3.11-bookworm
+image: python:3.14-bookworm
 
 workflow:
   rules:
@@ -6,7 +6,7 @@ workflow:
 
 cache:
   paths:
-    - ".venv/"
+    - '.venv/'
 
 before_script:
   - |
@@ -17,14 +17,14 @@ before_script:
     python3-cffi \
     python3-pip \
     zip
-  - pip install poetry==1.6.1
-  - poetry install --no-root
+  - pip install uv
+  - uv sync --no-install-project
 
 # Build and publish main branch to GitLab pages
 pages:
   stage: deploy
   script:
-    - poetry run mkdocs build -d public
+    - uv run properdocs build -d public
   artifacts:
     paths:
       - public
@@ -35,7 +35,7 @@ pages:
 test:
   stage: test
   script:
-    - poetry run mkdocs build -d test
+    - uv run properdocs build -d test
   artifacts:
     paths:
       - test

@@ -22,16 +22,16 @@ avec le contenu du site. Pour cela, il suffit de construire une version statique
 avec la commande :
 
 ```bash
-SHOW_SOLUTION=999 LECTURE_WEEK=999 poetry run mkdocs build -d public
+SHOW_SOLUTION=999 LECTURE_WEEK=999 uv run properdocs build -d public
 ```
 
 Vous aurez alors un dossier `public` contenant la totalité du site.
 
 Dans ce dossier, ajoutez encore un fichier `.prefix` indiquant le _préfixe_ du site. Vous trouverez ce préfixe
-dans le fichier `mkdocs.yml` à la ligne commençant par `site_url`. Pour rappel, voici le début
-du fichier `mkdocs.yml` de notre exemple :
+dans le fichier `properdocs.yml` à la ligne commençant par `site_url`. Pour rappel, voici le début
+du fichier `properdocs.yml` de notre exemple :
 
-```yaml title="mkdocs.yml" hl_lines="2"
+```yaml title="properdocs.yml" hl_lines="2"
 site_name: My Education Site
 site_url: https://heia-fr.github.io/mkdocs-edu-howto/
 ...

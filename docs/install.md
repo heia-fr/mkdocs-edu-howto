@@ -6,8 +6,8 @@ title: Installation les logiciels nécessaires
 
 La méthode que je décris sur ce site fonctionne avec Windows, macOS ou Linux et utilise les logiciels suivants:
 
-- [Python](https://www.python.org/downloads/) (version 3.11)
-- [Poetry](https://python-poetry.org/docs/#installation)
+- [Python](https://www.python.org/downloads/) (version 3.11 ou supérieure)
+- [Uv](https://docs.astral.sh/uv/getting-started/installation/)
 - Pour interagir avec Github ou Gitlab, un [client Git](https://git-scm.com/downloads) est aussi nécessaire.
 
 Assurez-vous d'avoir installé ces logiciels avant de continuer.

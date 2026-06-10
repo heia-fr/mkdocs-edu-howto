@@ -4,15 +4,18 @@ title: Thème du site
 
 # {{ page.title }}
 
-Le thème du site (couleur, police d'écriture ...) peut être modifié à l'aide du fichier `mkdocs.yml` et de fichiers `css` et `javascript` supplémentaires.
+Le thème du site (couleur, police d'écriture ...) peut être modifié à l'aide du fichier `properdocs.yml` et de fichiers `css` et `javascript` supplémentaires.
 
-Modifiez le fichier `mkdocs.yml` comme suit :
+Modifiez le fichier `properdocs.yml` comme suit :
 
-```yaml title="mkdocs.yml"
+```yaml title="properdocs.yml"
 site_name: My Education Site
 
 theme:
-  name: material
+  name: materialx
+  paelette:
+    primary: custom
+  topbar_style: primary
   language: 'fr'
   font:
     text: 'Roboto'
@@ -29,8 +32,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 ```
 
 créez ensuite la structure de dossiers suivante:
@@ -52,39 +54,41 @@ Puis ajoutez le fichier `overrides/javascripts/mathjax.js` :
 
 ```javascript title="overrides/javascripts/mathjax.js"
 window.MathJax = {
-    tex: {
-      inlineMath: [["\\(", "\\)"]],
-      displayMath: [["\\[", "\\]"]],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      ignoreHtmlClass: ".*|",
-      processHtmlClass: "arithmatex"
-    }
-  };
-  
-  document$.subscribe(() => { 
-    MathJax.typesetPromise()
-  })
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+  },
+  options: {
+    ignoreHtmlClass: '.*|',
+    processHtmlClass: 'arithmatex',
+  },
+}
+
+document$.subscribe(() => {
+  MathJax.typesetPromise()
+})
 ```
 
 et `overrides/stylesheets/extra.css`:
 
 ```css title="overrides/stylesheets/extra.css"
 :root {
-    --md-primary-fg-color:        #C32823;
-    --md-primary-fg-color--light: #fd5e4c;
-    --md-primary-fg-color--dark:  #8b0000;
-    --md-accent-fg-color:         #007CB7;
+  --md-primary-fg-color: #c32823;
+  --md-primary-fg-color--light: #fd5e4c;
+  --md-primary-fg-color--dark: #8b0000;
+  --md-accent-fg-color: #007cb7;
 }
 
 .md-content a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
 ```
 
-Avec cette configuration, la couleur de base du site est celle de la filière ISC de la Haute école d'ingénierie et d'architecture de Fribourg (#C32823). Les variantes de teintes sont déterminées à l'aide du site https://material.io/resources/color.
+Avec cette configuration, la couleur de base du site est celle de la filière ISC de la Haute école d'ingénierie et d'architecture de Fribourg (#C32823).
+Les variantes de teintes sont déterminées à l'aide du site https://material.io/resources/color.
 
 Le site devrait maintenant ressembler à ça:
 

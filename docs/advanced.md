@@ -13,7 +13,7 @@ mais les détails concernant son utilisation dépassent le cadre de ce site.
 
 ## Et bien d'autres...
 
-Le thème [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) ainsi
-que les nombreux _plugins_ pour mkdocs évoluent constamment pour offrir une 
+Le thème [MaterialX](https://jaywhj.github.io/mkdocs-materialx/) ainsi
+que les nombreux _plugins_ pour properdocs évoluent constamment pour offrir une 
 meilleure expérience utilisateur. Nous vous invitons à étudier la documentation
 et les nombreuses publications sur Internet pour améliorer votre site web.

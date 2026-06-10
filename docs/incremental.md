@@ -19,14 +19,14 @@ d'installer quelques _plugins_ supplémentaires.
 Allez à la racine de votre projet et tapez les commandes suivantes
 
 ```bash
-poetry add mkdocs-awesome-pages-plugin
-poetry add mkdocs-macros-plugin
-poetry add mkdocs-pages-j2-plugin
+uv add mkdocs-awesome-pages-plugin
+uv add mkdocs-macros-plugin
+uv add mkdocs-pages-j2-plugin
 ```
 
-Ajoutez aussi les _plugins_ dans le fichier `mkdocs.yml` :
+Ajoutez aussi les _plugins_ dans le fichier `properdocs.yml` :
 
-```yml title="mkdocs.yml"
+```yml title="properdocs.yml"
 plugins:
   - awesome-pages
   - macros
@@ -63,9 +63,9 @@ nav:
 ```
 {% endraw %}
 
-Vous pouvez définir la variable `lecture_week` dans la section `extra` du fichier `mkdocs.yml`. Par exemple, si vous définissez la variable comme suit :
+Vous pouvez définir la variable `lecture_week` dans la section `extra` du fichier `properdocs.yml`. Par exemple, si vous définissez la variable comme suit :
 
-```yml title="mkdocs.yml"
+```yml title="properdocs.yml"
 extra:
   lecture_week: 2
 ```
@@ -84,7 +84,7 @@ nav:
 Si vous souhaitez définir la variable lors de la génération du site, vous pouvez utiliser
 les variables d'environnement. Si vous définissez la variable `extra_lecture_week` ainsi :
 
-```yml title="mkdocs.yml"
+```yml title="properdocs.yml"
 extra:
   lecture_week: !ENV LECTURE_WEEK
 ```
@@ -92,12 +92,12 @@ extra:
 vous pourrez alors définir la variable `LECTURE_WEEK` lors de la génération du site. Par exemple, pour les deux premières semaines, vous pouvez utiliser la commande suivante :
 
 ```bash
-LECTURE_WEEK=2 poetry run mkdocs serve
+LECTURE_WEEK=2 uv run properdocs serve
 ```
 
-Dans le fichier `mkdocs.yml`, vous pouvez aussi définir une valeur par défaut pour la variable `LECTURE_WEEK` :
+Dans le fichier `properdocs.yml`, vous pouvez aussi définir une valeur par défaut pour la variable `LECTURE_WEEK` :
 
-```yml title="mkdocs.yml"
+```yml title="properdocs.yml"
 extra:
   lecture_week: !ENV [LECTURE_WEEK, '999']
 ```
@@ -123,16 +123,16 @@ Un extrait d'un fichier markdown typique ressemble à ça:
 ```
 {% endraw %}
 
-La variable `show_solution` est définie dans la section `extra` du fichier `mkdocs.yml`. Par exemple:
+La variable `show_solution` est définie dans la section `extra` du fichier `properdocs.yml`. Par exemple:
 
-```yml title="mkdocs.yml"
+```yml title="properdocs.yml"
 extra:
   show_solution: 2
 ```
 
 Tout comme pour la publication incrémentielle du contenu, vous pouvez définir la variable `show_solution` lors de la génération du site en utilisant les variables d'environnement. Si vous définissez la variable `extra_show_solution` ainsi :
 
-```yml title="mkdocs.yml"
+```yml title="properdocs.yml"
 extra:
   show_solution: !ENV SHOW_SOLUTION
 ```
@@ -140,7 +140,7 @@ extra:
 vous pourrez alors définir la variable `SHOW_SOLUTION` lors de la génération du site. Par exemple:
 
 ```bash
-SHOW_SOLUTION=1 LECTURE_WEEK=2 poetry run mkdocs serve
+SHOW_SOLUTION=1 LECTURE_WEEK=2 uv run properdocs serve
 ```
 
 !!! tip "Astuce {{ tip }}"
@@ -149,7 +149,7 @@ SHOW_SOLUTION=1 LECTURE_WEEK=2 poetry run mkdocs serve
     rare de ne devoir publier qu'une partie des solution à la fois. Au lieu d'écrire à chaque
     fois le même nombre dans l'expression {% raw %}`{% if solution >= 5 %}`{% endraw %}, vous
     pouvez définir la semaine dans le
-    [_front matter_](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data)
+    [_front matter_](https://properdocs.org/user-guide/writing-your-docs/#meta-data)
     de la page et si la solution doit être publiée une semaine plus tard, faites comme ça :
     
 {% raw %}

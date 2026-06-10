@@ -14,17 +14,17 @@ Pour inclure le contenu de fichier, le plus simple c'est d'utiliser le
 [include markdown plugin](https://github.com/mondeja/mkdocs-include-markdown-plugin)
 pour _MkDocs_.
 
-Ajoutez le module python du _plugin_ dans votre configuration de _mkdocs_:
+Ajoutez le module python du _plugin_ dans votre configuration de _properdocs_:
 
 Allez à la racine de votre projet et tapez la commande suivante
 
 ```bash
-poetry add mkdocs_include_markdown_plugin
+uv add mkdocs_include_markdown_plugin
 ```
 
-Ajoutez aussi le _plugin_ dans le fichier `mkdocs.yml` :
+Ajoutez aussi le _plugin_ dans le fichier `properdocs.yml` :
 
-```yml title="mkdocs.yml"
+```yml title="properdocs.yml"
 plugins:
   include-markdown:
     opening_tag: '{!'
