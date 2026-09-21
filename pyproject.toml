@@ -1,6 +1,6 @@
 [project]
 name = "mkdocs-edu"
-version = "0.2.3"
+version = "0.2.4"
 description = "mkdocs for education web site"
 license = "MIT"
 authors = [{ name = "Jacques Supcik", email = "jacques.supcik@hefr.ch" }]
