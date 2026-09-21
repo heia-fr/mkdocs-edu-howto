@@ -90,6 +90,16 @@ et `overrides/stylesheets/extra.css`:
 Avec cette configuration, la couleur de base du site est celle de la filière ISC de la Haute école d'ingénierie et d'architecture de Fribourg (#C32823).
 Les variantes de teintes sont déterminées à l'aide du site https://material.io/resources/color.
 
+Testez maintenant votre site avec la commande suivante:
+```bash
+uv run properdocs serve
+```
+
+!!! note 
+    Si vous avez déjà lancé le serveur de développement, vous devez l'arrêter avec ++ctrl+c++ et le relancer pour que les modifications soient prises en compte. Notez que l'option `-t materialx` n'est plus nécessaire car le thème est maintenant défini dans le fichier `properdocs.yml`. **L'option
+    est même interdite car elle écrase la configuration du fichier `properdocs.yml` et ne produit pas le résultat attendu**.
+
+
 Le site devrait maintenant ressembler à ça:
 
 ![site avec le thème de ISC](theme/img/site_red.webp){ class="screen" width="100%" }
